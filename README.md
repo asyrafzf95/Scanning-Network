@@ -148,17 +148,17 @@ Task 1: Scan beyond IDS/Firewall using various Evasion Techniques
 9. Click Windows 11 to switch to the Windows 11 machine (target machine). In the Wireshark window, scroll-down and you can observe the TCP packets indicating that the port number 80 is used to scan other ports of the target host, as shown in the screenshot.
 ![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/d55f55f793f49b7e15b728fb293b24510b2be4d1/IMAGES/30.jpg)
 10. Click Parrot Security to switch to the Parrot Security machine. Now, run nmap -mtu 8 [Target IP Address] command (here, target IP address is 10.10.1.11).
-31
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/38b80ea4c068eff4d2a08cde2131e4efe5a21a09/IMAGES/31.jpg)
 11. Click Windows 11 to switch to the Windows 11 machine (target machine). In the Wireshark window, scroll-down and you can observe the fragmented packets having maximum length as 8 bytes, as shown in the screenshot.
-32
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/38b80ea4c068eff4d2a08cde2131e4efe5a21a09/IMAGES/32.jpg)
 12. Click Parrot Security to switch to the Parrot Security machine. Now, run nmap -D RND:10 [Target IP Address] command (here, target IP address is 10.10.1.11).
-33
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/38b80ea4c068eff4d2a08cde2131e4efe5a21a09/IMAGES/33.jpg)
 13. Now, click Windows 11 to switch to the Windows 11 machine (target machine). In the Wireshark window, scroll-down and you can observe the packets displaying the multiple IP addresses in the source section, as shown in the screenshot.
-34
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/38b80ea4c068eff4d2a08cde2131e4efe5a21a09/IMAGES/34.jpg)
 14. Click Parrot Security to switch to the Parrot Security machine. In the terminal window, run nmap -sT -Pn --spoof-mac 0 [Target IP Address] command (here, target IP address is 10.10.1.11).
-35
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/38b80ea4c068eff4d2a08cde2131e4efe5a21a09/IMAGES/35.jpg)
 15. Click Windows 11 to switch to the Windows 11 machine (target machine). In the Wireshark window, scroll-down and you can observe the captured TCP, as shown in the screenshot.
-36
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/38b80ea4c068eff4d2a08cde2131e4efe5a21a09/IMAGES/36.jpg)
 
 # Lab 5: Perform Network Scanning using Various Scanning Tools
 
@@ -166,18 +166,18 @@ Task 1: Scan a Target Network using Metasploit
 
 1. Click Parrot Security to switch to the Parrot Security machine. Open a Terminal window and execute sudo su to run the programs as a root user.
 2. Execute command msfconsole to launch Metasploit.
-37
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/38b80ea4c068eff4d2a08cde2131e4efe5a21a09/IMAGES/37.jpg)
 3. An msf command line appears. Type nmap -Pn -sS -A -oX Test 10.10.1.0/24 and press Enter to scan the subnet, as shown in the screenshot. Nmap begins scanning the subnet and displays the results. It takes approximately 5 minutes for the scan to complete.
 4. After the scan completes, Nmap displays the host information in the target network along with open ports, service and OS enumeration.
-38
-39
-40
-41
-42
-43
-44
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/38b80ea4c068eff4d2a08cde2131e4efe5a21a09/IMAGES/38.jpg)
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/38b80ea4c068eff4d2a08cde2131e4efe5a21a09/IMAGES/39.jpg)
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/38b80ea4c068eff4d2a08cde2131e4efe5a21a09/IMAGES/40.jpg)
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/38b80ea4c068eff4d2a08cde2131e4efe5a21a09/IMAGES/41.jpg)
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/38b80ea4c068eff4d2a08cde2131e4efe5a21a09/IMAGES/42.jpg)
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/38b80ea4c068eff4d2a08cde2131e4efe5a21a09/IMAGES/43.jpg)
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/38b80ea4c068eff4d2a08cde2131e4efe5a21a09/IMAGES/44.jpg)
 5. Type search portscan and press Enter. The Metasploit port scanning modules appear, as shown in the screenshot.
-45
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/38b80ea4c068eff4d2a08cde2131e4efe5a21a09/IMAGES/45.jpg)
 6. Here, i will use the auxiliary/scanner/portscan/syn module to perform an SYN scan on the target systems. To do so, type use auxiliary/scanner/portscan/syn and hit Enter.
 7. We will use this module to perform an SYN scan against the target IP address range (10.10.1.5-23) to look for open port 80 through the eth0 interface.
 To do so, issue the below commands:
@@ -186,15 +186,15 @@ To do so, issue the below commands:
 - set RHOSTS 10.10.1.5-23
 - set THREADS 50
 8. After specifying the above values, type run and press Enter, to initiate the scan against the target IP address range.
-46
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/38b80ea4c068eff4d2a08cde2131e4efe5a21a09/IMAGES/46.jpg)
 9. The result appears, displaying open port 80 in active hosts, as shown in the screenshot.
-47
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/38b80ea4c068eff4d2a08cde2131e4efe5a21a09/IMAGES/47.jpg)
 10. Now, i will perform a TCP scan for open ports on the target systems. To load the auxiliary/scanner/portscan/tcp module, type use auxiliary/scanner/portscan/tcp and press Enter. Run show options command to view module options.
-48
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/38b80ea4c068eff4d2a08cde2131e4efe5a21a09/IMAGES/48.jpg)
 11. Type set RHOSTS [Target IP Address] and press Enter.
 12. Type run and press Enter to discover open TCP ports in the target system.
 13. The results appear, displaying all open TCP ports in the target IP address (10.10.1.22).
-49 
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/38b80ea4c068eff4d2a08cde2131e4efe5a21a09/IMAGES/49.jpg)
 14. Now that i have determined the active hosts on the target network, i can further attempt to determine the OSes running on the target systems. As there are systems in our scan that have port 445 open, i will use the module scanner/smb/version to determine which version of Windows is running on a target and which Samba version is on a Linux host.
 15. To do so, first type back, to revert to the msf command line. Then, type use auxiliary/scanner/smb/smb_version and hit enter.
 16. I will use this module to run a SMB version scan against the target IP address range (10.10.1.5-23). To do so, issue the below commands:
@@ -202,4 +202,4 @@ To do so, issue the below commands:
 - set THREADS 11
 17. Type run to discover SMB version in the target systems.
 18. The result appears, displaying the OS details of the target hosts.
-50
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/38b80ea4c068eff4d2a08cde2131e4efe5a21a09/IMAGES/50.jpg)
