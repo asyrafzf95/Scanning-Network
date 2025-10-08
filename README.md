@@ -1,7 +1,7 @@
 # Scanning-Network
 
 Lab Tasks
-Ethical hackers and pen testers use numerous tools and techniques to scan the target network. Recommended labs that will assist you in learning various network scanning techniques include:
+Ethical hackers and pen testers use numerous tools and techniques to scan the target network. Recommended labs that i used in learning various network scanning techniques include:
 
 1. Perform host discovery
  - Perform host discovery using Nmap
