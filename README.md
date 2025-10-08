@@ -86,13 +86,13 @@ Task 1: Explore Various Network Scanning Techniques using Nmap
 17. In the Command field, type nmap -sA -v [Target IP Address] (here, the target IP address is 10.10.1.22) and click Scan. The scan results appear, displaying that the ports are filtered on the target machine, as shown in the screenshot.
 ![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/8d9a770eef862c9d20c4b02d6e6f8042f56fc89f/IMAGES/15.jpg)
 18. Now, click Windows Server 2022 to switch to the Windows Server 2022 machine. Turn off the Windows Defender Firewall from Control Panel. Now, click Windows 11 to navigate back to the Windows 11 machine. In the Command field of Zenmap, type nmap -sU -v [Target IP Address] (here, the target IP address is 10.10.1.22) and click Scan. The scan results appear, displaying all open UDP ports and services running on the target machine, as shown in the screenshot.
-16
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/d55f55f793f49b7e15b728fb293b24510b2be4d1/IMAGES/16.jpg)
 19. In the Command field, type nmap -sV [Target IP Address] (here, the target IP address is 10.10.1.22) and click Scan. The scan results appear, displaying that open ports and the version of services running on the ports, as shown in the screenshot.
-17
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/d55f55f793f49b7e15b728fb293b24510b2be4d1/IMAGES/17.jpg)
 20. In the Command field, type nmap -A [Target Subnet] (here, target subnet is 10.10.1.* ) and click Scan. By providing the "*" (asterisk) wildcard, you can scan a whole subnet or IP range. Nmap scans the entire network and displays information for all the hosts that were scanned, along with the open ports and services, device type, details of OS, etc. as shown in the screenshot.
-18
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/d55f55f793f49b7e15b728fb293b24510b2be4d1/IMAGES/18.jpg)
 21. Choose an IP address 10.10.1.22 from the list of hosts in the left-pane and click the Host Details tab. This tab displays information such as Host Status, Addresses, Operating System, Ports used, OS Classes, etc. associated with the selected host.
-19
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/d55f55f793f49b7e15b728fb293b24510b2be4d1/IMAGES/19.jpg)
 
 # Lab 3: Perform OS Discovery
 Banner grabbing, or OS fingerprinting, is a method used to determine the OS that is running on a remote target system.
@@ -105,14 +105,14 @@ Task 1: Perform OS Discovery using Nmap Script Engine (NSE)
 
 1. Click Parrot Security to switch to the Parrot Security machine. Open a Terminal window and execute sudo su to run the programs as a root user.
 2. In the terminal window, run nmap -A [Target IP Address] command (here, the target machine is Windows Server 2022 [10.10.1.22]). The scan results appear, displaying the open ports and running services along with their versions and target details such as OS, computer name, NetBIOS computer name, etc. under the Host script results section.
-20
-21
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/d55f55f793f49b7e15b728fb293b24510b2be4d1/IMAGES/20.jpg)
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/d55f55f793f49b7e15b728fb293b24510b2be4d1/IMAGES/21.jpg)
 3. In the terminal window, run nmap -O [Target IP Address] command (here, the target machine is Windows Server 2022 [10.10.1.22]). The scan results appear, displaying information about open ports, respective services running on the open ports, and the name of the OS running on the target system.
-22
-23
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/d55f55f793f49b7e15b728fb293b24510b2be4d1/IMAGES/22.jpg)
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/d55f55f793f49b7e15b728fb293b24510b2be4d1/IMAGES/23.jpg)
 4. In the terminal window, run nmap --script smb-os-discovery.nse [Target IP Address] command (here, the target machine is Windows Server 2022 [10.10.1.22]). The scan results appear, displaying the target OS, computer name, NetBIOS computer name, etc. details under the Host script results section.
-24
-25
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/d55f55f793f49b7e15b728fb293b24510b2be4d1/IMAGES/24.jpg)
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/d55f55f793f49b7e15b728fb293b24510b2be4d1/IMAGES/25.jpg)
 
 # Lab 4: Scan beyond IDS and Firewall
 
@@ -133,20 +133,20 @@ IP Address Decoy: Generate or manually specify IP addresses of the decoys so tha
 Task 1: Scan beyond IDS/Firewall using various Evasion Techniques
 
 1. Click Windows 11 to switch to the Windows 11 machine. Navigate to Control Panel --> System and Security --> Windows Defender Firewall --> Turn Windows Defender Firewall on or off, enable Windows Defender Firewall and click OK, as shown in the screenshot.
-26
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/d55f55f793f49b7e15b728fb293b24510b2be4d1/IMAGES/26.jpg)
 2. Minimize the Control Panel window, click windows Search icon on the Desktop. Search for wireshark in the search field and click Open to launch it.
 3. The Wireshark Network Analyzer window appears, start capturing packets by double-clicking the available ethernet or interface (here, Ethernet).
 4. Click Parrot Security to switch to the Parrot Security machine. Open a Terminal window and execute sudo su to run the programs as a root user.
 5. Now, run cd command to jump to the root directory. In the terminal window, run nmap -f [Target IP Address] command, (here, the target machine is Windows 11 [10.10.1.11]).
 6. Although Windows Defender Firewall is turned on in the target system (here, Windows 11), you can still obtain the results displaying all open TCP ports along with the name of services running on the ports, as shown in the screenshot.
-27
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/d55f55f793f49b7e15b728fb293b24510b2be4d1/IMAGES/27.jpg)
 6. Click Windows 11 to switch to the Windows 11 machine (target machine). You can observe the fragmented packets captured by the Wireshark, as shown in the screenshot.
-28
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/d55f55f793f49b7e15b728fb293b24510b2be4d1/IMAGES/28.jpg)
 7. Click Parrot Security to switch to the Parrot Security machine. In the Parrot Terminal window, run nmap -g 80 [Target IP Address] command, (here, target IP address is 10.10.1.11).
 8. The results appear, displaying all open TCP ports along with the name of services running on the ports, as shown in the screenshot.
-29
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/d55f55f793f49b7e15b728fb293b24510b2be4d1/IMAGES/29.jpg)
 9. Click Windows 11 to switch to the Windows 11 machine (target machine). In the Wireshark window, scroll-down and you can observe the TCP packets indicating that the port number 80 is used to scan other ports of the target host, as shown in the screenshot.
-30
+![image alt](https://github.com/asyrafzf95/Scanning-Network/blob/d55f55f793f49b7e15b728fb293b24510b2be4d1/IMAGES/30.jpg)
 10. Click Parrot Security to switch to the Parrot Security machine. Now, run nmap -mtu 8 [Target IP Address] command (here, target IP address is 10.10.1.11).
 31
 11. Click Windows 11 to switch to the Windows 11 machine (target machine). In the Wireshark window, scroll-down and you can observe the fragmented packets having maximum length as 8 bytes, as shown in the screenshot.
